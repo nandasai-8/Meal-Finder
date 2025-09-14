@@ -408,11 +408,11 @@ header{
     flex-wrap: wrap;
     align-items: flex-start;
     }
-    .meal-details-image, .meal-details-info {
+    /* .meal-details-image, .meal-details-info {
       flex: 1 1 100%;
       padding: 0;
     }
     .meal-details-image {
       margin-bottom: 20px;
-    }
+    } */
   }
