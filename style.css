@@ -402,17 +402,14 @@ header{
     padding: 8px;
     border-radius: 20px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1290px) {
     .meal-details-container {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
     }
-    /* .meal-details-image, .meal-details-info {
-      flex: 1 1 100%;
-      padding: 0;
+    .meal-ingredients ul li{
+      display: block;
+      margin: 5px 0;
     }
-    .meal-details-image {
-      margin-bottom: 20px;
-    } */
   }
