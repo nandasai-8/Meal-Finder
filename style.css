@@ -404,7 +404,9 @@ header{
   }
   @media (max-width: 768px) {
     .meal-details-container {
-      flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     }
     .meal-details-image, .meal-details-info {
       flex: 1 1 100%;
