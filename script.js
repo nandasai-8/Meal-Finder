@@ -209,48 +209,29 @@ async function getMealDetails(id) {
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
         </div>
         <div class="meal-details-info">
+        <div class="meal-details-container">
           <h2>${meal.strMeal}</h2>
-          <p class="category-text">Category: ${meal.strCategory}</p>
-          <a href="${meal.strSource}" target="_blank" class="source-link">Source: ${meal.strSource}</a>
-          
-          <div class="meal-details-tags">
-            <h3>Tags:</h3>
-            <div class="tag-list">
-              ${tags.map(tag => `<span class="tag">${tag.trim()}</span>`).join('')}
-            </div>
+          <p><strong>Category:</strong> ${meal.strCategory}</p> 
+          <p><strong>Area:</strong> ${meal.strArea}</p>
+          ${tags.length ? `<p><strong>Tags:</strong> ${tags.join(', ')}</p>` : ''}
+          <div class="meal-ingredients">
+          <h3>Ingredients:</h3>
+          <ul>
+            ${ingredientsList.map((ing, index) => `<li>${measuresList[index]} ${ing}</li>`).join('')}
+          </ul>
           </div>
-
-          <div class="details-box">
-            <h3>Ingredients</h3>
-            <ul class="details-list">
-              ${ingredientsList.map((item, index) => `
-                <li>
-                  <span class="ingredient-number">${index + 1}</span>
-                  ${item}
-                </li>`).join('')}
-            </ul>
           </div>
-          <div class="details-box">
-            <h3>Measures</h3>
-            <ul class="details-list">
-              ${measuresList.map(item => `
-                <li>
-                  <i class="fas fa-arrow-right"></i>
-                  ${item}
-                </li>`).join('')}
-            </ul>
+          <div class="meal-instructions">       
+          <h3>Instructions:</h3>
+          <ol>
+            ${instructions.map(step => `<li>${step.trim()}.</li>`).join('')}
+          </ol>
           </div>
-          <div class="details-instructions">
-            <h3>Instructions</h3>
-            <ul class="instructions-list">
-              ${instructions.map(instruction => `
-                <li>
-                  <i class="fas fa-check-square"></i>
-                  ${instruction.trim()}
-                </li>`).join('')}
-            </ul>
-          </div>
+          ${meal.strYoutube ? `<h3>Video Tutorial:</h3>
+          <a href="${meal.strYoutube}" target="_blank">${meal.strYoutube}</a>` : ''}
         </div>
+
+       
       `;
       detailsContainer.innerHTML = mealDetailsHTML;
     }
