@@ -209,23 +209,24 @@ async function getMealDetails(id) {
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
         </div>
         <div class="meal-details-info">
-        <div class="meal-details-container">
-          <h2>${meal.strMeal}</h2>
-          <p><strong>Category:</strong> ${meal.strCategory}</p> 
-          <p><strong>Area:</strong> ${meal.strArea}</p>
-          ${tags.length ? `<p><strong>Tags:</strong> ${tags.join(', ')}</p>` : ''}
-          <div class="meal-ingredients">
-          <h3>Ingredients:</h3>
-          <ul>
-            ${ingredientsList.map((ing, index) => `<li>${measuresList[index]} ${ing}</li>`).join('')}
-          </ul>
-          </div>
-          </div>
-          <div class="meal-instructions">       
-          <h3>Instructions:</h3>
-          <ol>
-            ${instructions.map(step => `<li>${step.trim()}.</li>`).join('')}
-          </ol>
+                <div class="meal-details">
+                  <h2>${meal.strMeal}</h2>
+                  <p><strong>Category:</strong> ${meal.strCategory}</p> 
+                  <p><strong>Area:</strong> ${meal.strArea}</p>
+                  ${tags.length ? `<p><strong>Tags:</strong> ${tags.join(', ')}</p>` : ''}
+                </div>
+              <div class="meal-ingredients">
+                <h3>Ingredients:</h3>
+                <ul>
+                  ${ingredientsList.map((ing, index) => `<li>${measuresList[index]} ${ing}</li>`).join('')}
+                </ul>
+              </div>
+            
+            <div class="meal-instructions">       
+            <h3>Instructions:</h3>
+            <ol>
+              ${instructions.map(step => `<li>${step.trim()}.</li>`).join('')}
+            </ol>
           </div>
           ${meal.strYoutube ? `<h3>Video Tutorial:</h3>
           <a href="${meal.strYoutube}" target="_blank">${meal.strYoutube}</a>` : ''}
