@@ -202,27 +202,27 @@ async function getMealDetails(id) {
 
       const tags = meal.strTags ? meal.strTags.split(',') : [];
 
-      const instructions = meal.strInstructions.split('. ').filter(step => step.trim() !== '');
+      const instructions = meal.strInstructions ? meal.strInstructions.split('. ').filter(step => step.trim() !== '') : [];
 
       const mealDetailsHTML = `
         <div class="meal-details-image">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-        </div>
+        </div >
         <div class="meal-details-info">
-                <div class="meal-details">
-                  <h2>${meal.strMeal}</h2>
-                  <p><strong>Category:</strong> ${meal.strCategory}</p> 
-                  <p><strong>Area:</strong> ${meal.strArea}</p>
-                  ${tags.length ? `<p><strong>Tags:</strong> ${tags.join(', ')}</p>` : ''}
-                </div>
-              <div class="meal-ingredients">
-                <h3>Ingredients:</h3>
-                <ul>
-                  ${ingredientsList.map((ing, index) => `<li>${measuresList[index]} ${ing}</li>`).join('')}
-                </ul>
-              </div>
-            
-            <div class="meal-instructions">       
+          <div class="meal-details">
+            <h2>${meal.strMeal}</h2>
+            <p><strong>Category:</strong> ${meal.strCategory}</p>
+            <p><strong>Area:</strong> ${meal.strArea}</p>
+            ${tags.length ? `<p><strong>Tags:</strong> ${tags.join(', ')}</p>` : ''}
+          </div>
+          <div class="meal-ingredients">
+            <h3>Ingredients:</h3>
+            <ul>
+              ${ingredientsList.map((ing, index) => `<li>${measuresList[index]} ${ing}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="meal-instructions">
             <h3>Instructions:</h3>
             <ol>
               ${instructions.map(step => `<li>${step.trim()}.</li>`).join('')}
@@ -232,7 +232,7 @@ async function getMealDetails(id) {
           <a href="${meal.strYoutube}" target="_blank">${meal.strYoutube}</a>` : ''}
         </div>
 
-       
+
       `;
       detailsContainer.innerHTML = mealDetailsHTML;
     }
