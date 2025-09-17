@@ -204,37 +204,43 @@ async function getMealDetails(id) {
 
       const instructions = meal.strInstructions ? meal.strInstructions.split('. ').filter(step => step.trim() !== '') : [];
 
-      const mealDetailsHTML = `
-        <div class="meal-details-image">
-          <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-        </div >
-        <div class="meal-details-info">
-          <div class="meal-details">
-            <h2>${meal.strMeal}</h2>
-            <p><strong>Category:</strong> ${meal.strCategory}</p>
-            <p><strong>Area:</strong> ${meal.strArea}</p>
-            ${tags.length ? `<p><strong>Tags:</strong> ${tags.join(', ')}</p>` : ''}
-          </div>
-          <div class="meal-ingredients">
-            <h3>Ingredients:</h3>
-            <ul>
-              ${ingredientsList.map((ing, index) => `<li>${measuresList[index]} ${ing}</li>`).join('')}
-            </ul>
-          </div>
 
-          <div class="meal-instructions">
-            <h3>Instructions:</h3>
-            <ol>
-              ${instructions.map(step => `<li>${step.trim()}.</li>`).join('')}
-            </ol>
-          </div>
-          ${meal.strYoutube ? `<h3>Video Tutorial:</h3>
-          <a href="${meal.strYoutube}" target="_blank">${meal.strYoutube}</a>` : ''}
-        </div>
-
-
+      const mealTopDetailsHTML = `
+      <div class="meal-top">
+            <div class="meal-details-image">
+              <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+            </div>
+    
+            <div class="meal-details-info">
+              <h2>${meal.strMeal}</h2>
+              <h1 class="area-text">Area: ${meal.strArea || "—"}</h1>
+              <p class="category-text">Category: ${meal.strCategory || "—"}</p>
+              ${meal.strSource ? `<p><a class="source-link" href="${meal.strSource}" target="_blank" rel="noopener noreferrer">Source</a></p>` : ""}
+              <div class="meal-details-tags">
+                ${tags.length > 0 ? '<h3>Tags</h3>' : ''}
+                ${tags.map(t => `<span class="tag">${t}</span>`).join("")}
+                  <div class="ingredients-measures-box" aria-label="Ingredients and Measures">
+              <h3>Ingredients & Measures</h3>
+              <ul class="details-list">
+                ${ingredientsList.map((ing, idx) => `<li>${ing} - ${measuresList[idx] || "-"}</li>`).join("")}
+              </ul>
+            </div>
+              </div>
+            </div >
+          </div >
       `;
-      detailsContainer.innerHTML = mealDetailsHTML;
+      const bottomHtml =
+        `<div class="meal-bottom">
+          
+    
+            <div class="details-instructions" aria-label="Instructions">
+          < ul class= "instructions-list" >
+          ${instructions.map(ins => `<li><i class="fas fa-check"></i><div>${ins.endsWith('.') ? ins : ins + '.'}</div></li>`).join("")}
+        </ul >
+            </div >
+          </div >
+        `;
+      detailsContainer.innerHTML = mealTopDetailsHTML + bottomHtml;
     }
   } catch (err) {
     console.error(err);

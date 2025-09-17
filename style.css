@@ -6,11 +6,13 @@ body {
   background: #f4f4f4;
   color: #333;
 }
-header{
+
+header {
   position: sticky;
   top: 0;
   z-index: 100;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -28,13 +30,15 @@ header{
   font-size: 1.5rem;
   font-weight: 700;
 }
-.logo a{
+
+.logo a {
   text-decoration: none;
-    color: orangered;
-    background-color: white;
-    padding: 5px;
-    border-radius: 20px;
+  color: orangered;
+  background-color: white;
+  padding: 5px;
+  border-radius: 20px;
 }
+
 .menu-icon {
   font-size: 2rem;
   color: white;
@@ -50,7 +54,8 @@ header{
   background-position: center;
   height: 100vh;
   padding: 10px 20px;
-  height: 400px; /* This height can be problematic for dynamic content */
+  height: 400px;
+  /* This height can be problematic for dynamic content */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +116,7 @@ header{
   width: 100%;
   border-radius: 50px;
 }
+
 .searchForm button {
   /* background-image: linear-gradient(to right, #e53935, #e35d5b); */
   color: white;
@@ -130,7 +136,7 @@ header{
 
 .searchForm button:hover {
   transform: scale(1.1);
-  background-color:rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   border: none;
 }
 
@@ -176,7 +182,7 @@ header{
 }
 
 #categoryList li:hover {
-  color:white;
+  color: white;
   background-color: orangered;
   border-radius: 25px;
   padding: 20px;
@@ -245,9 +251,11 @@ header{
 
 /* Specific styles for meal results */
 #meals-by-category {
-  padding: 100px; /* Add some padding around the section */
+  padding: 100px;
+  /* Add some padding around the section */
 }
-.description{
+
+.description {
   margin: 10px 30px;
   font-size: 1rem;
   color: #555;
@@ -258,17 +266,20 @@ header{
   border: 2px solid orangered;
   line-height: 30px;
 }
-.description-content{
+
+.description-content {
   padding: 30px;
 }
-.desHeader{
+
+.desHeader {
   font-size: 1.9rem;
   font-weight: 800;
   color: orangered;
   text-decoration: underline #333;
   margin-left: 2rem;
- 
+
 }
+
 .meals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -301,17 +312,19 @@ header{
 }
 
 .meal-title {
-  position: static; /* Change from absolute to static */
+  position: static;
+  /* Change from absolute to static */
   background: orangered;
-  max-height:20px;
+  max-height: 20px;
   color: white;
   padding: 10px;
   text-align: center;
   font-weight: 600;
   /* Removed bottom, left, right to make it flow with content */
 }
-.meal-title:hover{
-  border:2px solid orangered;
+
+.meal-title:hover {
+  border: 2px solid orangered;
   background-color: white;
   color: orangered;
   border-radius: 10px;
@@ -350,7 +363,7 @@ header{
   transform: translateX(-5px);
 }
 
-.meal-details-container {
+/* .meal-details-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -372,44 +385,242 @@ header{
 .meal-details-info {
   flex: 2;
 }
-  .meal-details-image {
-    flex: 1 1 40%;
-    padding-right: 20px;
-  } 
 
-  .meal-details-info {
-    flex: 1 1 55%;
-  }
-  .meal-details-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-  .meal-ingredients ul{
-    list-style: round ;
-    padding: 0;
-    margin: 0 20px;
-    background-color: orangered;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  .meal-ingredients ul li{
-    margin: 0 5px 10px 20px;
-    list-style-type: round;
-    display: inline-block;
-    background:linear-gradient(to right, #e36b0a, #d7600b);
-    color:white;
-    padding: 8px;
-    border-radius: 20px;
-  }
+.meal-details-image {
+  flex: 1 1 40%;
+  padding-right: 20px;
+}
+
+.meal-details-info {
+  flex: 1 1 55%;
+}
+
+.meal-details-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.meal-ingredients ul {
+  list-style: round;
+  padding: 0;
+  margin: 0 20px;
+  background-color: orangered;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.meal-ingredients ul li {
+  margin: 0 5px 10px 20px;
+  list-style-type: round;
+  display: inline-block;
+  background: linear-gradient(to right, #e36b0a, #d7600b);
+  color: white;
+  padding: 8px;
+  border-radius: 20px;
+} */
+/* .meal-frame {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-details-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.meal-details-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.meal-details-info {
+  flex: 1 1 55%;
+  text-align: left;
+}
+
+.meal-instructions {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.meal-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 22px;
+  margin: 18px;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* TOP ROW: image (left) + info & ingredients (right) */
+.meal-top {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.meal-details-image {
+  flex: 1 1 320px;
+  min-width: 260px;
+}
+
+.meal-details-image img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.meal-details-info {
+  flex: 1.4 1 420px;
+  min-width: 260px;
+}
+
+.meal-details-info h2 {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+}
+
+.category-text {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.source-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.meal-details-tags {
+  margin: 10px 0;
+}
+
+.tag {
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* INGREDIENTS (in right column so beside image) */
+.ingredients-box {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.ingredients-box h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.details-list li {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+/* BOTTOM ROW (full width) -> Measures + Instructions */
+.meal-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.measures-box {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.measures-box h3 {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.measures-box .details-list li {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Instructions full width white card */
+.details-instructions {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.instructions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructions-list li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.instructions-list li i {
+  color: var(--accent);
+  margin-top: 3px;
+}
+
+/* Back button */
+.meal-details-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+*/ .meal- details-container {
   @media (max-width: 1290px) {
-    .meal-details-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    }
-    .meal-ingredients ul li{
-      display: block;
-      margin: 5px 0;
-    }
+    max-width: 1200px;
+    margin: auto;
   }
+}
