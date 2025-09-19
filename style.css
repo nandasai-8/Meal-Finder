@@ -386,7 +386,7 @@ header {
   gap: 20px;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin: 0 10rem;
+  margin: 0 5rem;
 }
 
 .meal-top a {
@@ -485,7 +485,7 @@ header {
   flex-direction: column;
   gap: 18px;
   width: 82%;
-  margin: 2rem 10rem;
+  margin: 2rem 5rem;
 }
 
 .measures-box {
