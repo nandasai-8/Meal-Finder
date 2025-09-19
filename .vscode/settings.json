@@ -6,6 +6,15 @@
   "spellright.documentTypes": [
     "markdown",
     "latex",
-    "plaintext"
-  ]
+    "plaintext",
+    "html"
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:Meal-Finder}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
 }
