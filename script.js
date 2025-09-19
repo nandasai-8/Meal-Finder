@@ -92,6 +92,7 @@ async function getMealsByCategory(category) {
     if (data.meals) {
       data.meals.forEach((meal) => {
         const card = document.createElement("div");
+
         desHeader.textContent = ` ${category}`;
         const description = categories.categories.find(cat => cat.strCategory === category)?.strCategoryDescription || "";
         descriptionDiv.textContent = description;
@@ -207,6 +208,7 @@ async function getMealDetails(id) {
 
       const mealTopDetailsHTML = `
       <div class="meal-top">
+      
             <div class="meal-details-image">
               <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
             </div>
@@ -234,8 +236,8 @@ async function getMealDetails(id) {
           
     
             <div class="details-instructions" aria-label="Instructions">
-          < ul class= "instructions-list" >
-          ${instructions.map(ins => `<li><i class="fas fa-check"></i><div>${ins.endsWith('.') ? ins : ins + '.'}</div></li>`).join("")}
+              <h3>Instructions</h3>
+          ${instructions.map(ins => `<li><div>${ins.endsWith('.') ? ins : ins + '.'}</div></li>`).join("")}
         </ul >
             </div >
           </div >

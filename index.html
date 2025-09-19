@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meal-finder</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <h1 class="logo"><a href="#categories-grid">🍴 MEAL FINDER</a></h1>
-        <div class="menu-icon">☰</div>
-      </nav>
-    </header>
 
-    <div class="category-sidebar" id="categorySidebar">
-      <div class="close-icon">&times;</div>
-      <ul id="categoryList"></ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal-finder</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo"><a href="#categories-grid">🍴 MEAL FINDER</a></h1>
+      <div class="menu-icon">☰</div>
+    </nav>
+  </header>
+
+  <div class="category-sidebar" id="categorySidebar">
+    <div class="close-icon">&times;</div>
+    <ul id="categoryList"></ul>
+  </div>
+
+  <div class="search-section">
+    <div class="search-overlay">
+      <form class="searchForm">
+        <input type="text" id="searchInput" placeholder="Search recipes here..." />
+        <button type="submit">🔍</button>
+      </form>
+      <h2 class="search-title">What are your favorite cuisines?</h2>
+      <p class="search-subtitle">PERSONALIZE YOUR EXPERIENCE</p>
+    </div>
+  </div>
+
+  <section class="categories-section">
+    <div class="categories-header">
+      <h2 class="section-title">CATEGORIES</h2>
+    </div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </section>
+
+  <section id="meals-by-category" class="hidden">
+    <a href="categories-section" id="back-button">
+      <i class="fas fa-arrow-left"></i>
+      Back
+    </a>
+    <div class="description">
+      <div class="desHeader" id="desHeader"></div>
+      <div class="description-content" id="description"></div>
     </div>
 
-    <div class="search-section">
-      <div class="search-overlay">
-        <form class="searchForm">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search recipes here..."
-          />
-          <button type="submit">🔍</button>
-        </form>
-        <h2 class="search-title">What are your favorite cuisines?</h2>
-        <p class="search-subtitle">PERSONALIZE YOUR EXPERIENCE</p>
-      </div>
+    <div class="categories-header">
+      <h2 class="section-title">MEALS</h2>
     </div>
 
-    <section class="categories-section">
-      <div class="categories-header">
-        <h2 class="section-title">CATEGORIES</h2>
+    <div class="meals-grid" id="meals-grid">
+
+    </div>
+  </section>
+
+  <section id="meal-details" class="hidden">
+    <div class="meal-details-header">
+      <div class="meal-details-title-bar">
+        <a href="# meals-by-category " id="back-button">
+          <i class="fas fa-arrow-left"></i>
+          Back
+        </a>
+        <h1>MEAL DETAILS</h1>
       </div>
-      <div class="categories-grid" id="categories-grid"></div>
-    </section>
+    </div>
+    <div class="meal-details-container" id="meal-details-container"></div>
+  </section>
 
-    <section id="meals-by-category" class="hidden">
-      <div class="description">
-        <div class="desHeader" id="desHeader"></div>
-        <div class="description-content" id="description"></div>
-      </div>
+  <script src="script.js"></script>
+</body>
 
-      <div class="categories-header">
-        <h2 class="section-title">MEALS</h2>
-      </div>
-
-      <div class="meals-grid" id="meals-grid"></div>
-    </section>
-
-    <section id="meal-details" class="hidden">
-      <div class="meal-details-header">
-        <div class="meal-details-title-bar">
-          <a href="#" id="back-button">
-            <i class="fas fa-arrow-left"></i>
-          </a>
-          <h1>MEAL DETAILS</h1>
-        </div>
-      </div>
-      <div class="meal-details-container" id="meal-details-container"></div>
-    </section>
-
-    <script src="script.js"></script>
-  </body>
 </html>
