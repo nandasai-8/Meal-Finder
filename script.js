@@ -217,7 +217,7 @@ async function getMealDetails(id) {
               <h2>${meal.strMeal}</h2>
               <h1 class="area-text">Area: ${meal.strArea || "—"}</h1>
               <p class="category-text">Category: ${meal.strCategory || "—"}</p>
-              ${meal.strSource ? `<p><a class="source-link" href="${meal.strSource}" target="_blank" rel="noopener noreferrer">Source</a></p>` : ""}
+              <a href="${meal.strSource} target="_blank" class="" >Source:${meal.strSource}</a>
               <div class="meal-details-tags">
                 ${tags.length > 0 ? '<h3>Tags</h3>' : ''}
                 ${tags.map(t => `<span class="tag">${t}</span>`).join("")}
